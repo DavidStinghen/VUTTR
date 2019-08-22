@@ -28,6 +28,6 @@ routes.post('/files', upload.single('file'), FileController.store);
 routes.post('/tools', ToolController.store);
 routes.get('/tools', ToolController.index);
 routes.put('/tools/:id', ToolController.update);
-routes.delete('/tools/:id', ToolController.destroy);
+routes.delete('/tools/:id', ToolController.delete);
 
 export default routes;
