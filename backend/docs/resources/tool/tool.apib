@@ -1,0 +1,117 @@
+## Ferramentas [/tools]
+
+### Incluir [POST]
+
+Caso o usuário estiver logado o mesmo poderá adicionar ferramentas.
+
+Os campos para realizar o cadastro estão disponíveis na tabela abaixo:
+
+| Atributo    | Tipo          | Obrigatório | Descrição               |
+|------------ |:-------------:|:-----------:|-------------------------|
+| title       | string        | **SIM**     | Titulo da ferramenta    |
+| link        | string        | **SIM**     | URL para ferramenta     |
+| description | string        | NÃO         | Descrição da ferramenta |
+| tags        | array[string] | NÃO         | Tags relacionadas       |
+
++ Request Incluir Ferramenta informando dados válidos (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
+    + Attributes (ToolBase)
+
++ Response 201 (application/json)
+    + Attributes (ToolResponse)
+
++ Request Incluir Ferramenta informando dados inválidos (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
+    + Attributes (ToolBase)
+      + title: `titulo-inválido`  (required, string) - Titulo da ferramenta
+      + link: `link-inválido`  (required, string) - Link da ferramenta
+      + description: `Descrição-inválido`  (required, string) - Descrição da ferramenta
+      + tags: `tags-inválido`  (required, array) - Tags da ferramenta
+
++ Response 400 (application/json)
+    + Attributes (ToolErrorValidation)
+
++ Request Incluir uma ferramenta já existente (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
+    + Attributes (ToolBase)
+      + link: `link-já existente`  (required, string) - Link da ferramenta
+
++ Response 400 (application/json)
+    + Attributes (ToolErrorAlredyExists)
+
+### Listar [GET/tools{?tag}]
+
+Listar as ferramentas cadastradas. É possível filtrar a buscapor tag,
+se informado, retornará todas as ferramentas que contém pelo menos uma tag relacionada.
+
++ Parameters
+  + tag: `nodejs` (optional, string)
+
++ Request Listar Ferramentas (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
++ Response 200 (application/json)
+    + Attributes (array[ToolResponse])
+
+### Atualizar [PUT /tools/{id}]
+
+É possível atualizar os dados das ferramentas cadastradas.
+
++ Parameters
+  + id: 1 (required, number) - ID da ferramenta
+
++ Request Alterar ferramenta informando dados válidos (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
+    + Attributes (ToolBase)
+
++ Response 200 (application/json)
+    + Attributes (ToolResponse)
+
++ Request Alterar ferramenta informando dados  inválidos (application/json)
+    + Headers
+
+              Authorization: Bearer <token>
+
+    + Attributes (ToolBase)
+      + title: `titulo-inválido`  (required, string) - Titulo da ferramenta
+      + link: `link-inválido`  (required, string) - Link da ferramenta
+      + description: `Descrição-inválido`  (required, string) - Descrição da ferramenta
+      + tags: `tags-inválido`  (required, array) - Tags da ferramenta
+
++ Response 400 (application/json)
+    + Attributes (ToolErrorValidation)
+
+### Excluir [DELETE /tools/{id}]
+
++ Parameters
+  + id: 1 (required, number) - ID da ferramenta
+
++ Request Excluir (application/json)
+    + Headers
+
+            Authorization: Bearer <token>
+
++ Response 204
+    + Attributes (ToolDeleteSuceffuly)
+
++ Request id inválido (application/json)
+    + Headers
+
+            Authorization: Bearer <token>
+
++ Response 404
+    + Attributes (ToolNotFound)

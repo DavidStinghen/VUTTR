@@ -1,0 +1,27 @@
+# Data Structures
+
+## ToolBase
++ title: `foo bar` (required, string) - Titulo da ferramenta.
++ link: `https://foobar.com/` (optional, string) - URL da ferramenta.
++ description: `foo bar description` (optional, string) - Descrição da ferramenta.
++ tags: `node.js`, `react`, `react native` (required, array[string]) - Tags relacionadas.
+
+## ToolResponse
++ code: `created` (required, string) - Código do status
++ id: 1 (required, number) - ID da ferramenta.
++ Include (ToolBase)
+
+## ToolDeleteSuceffuly
++ code: `no content` (required, string) - Código do status
+
+## ToolErrorValidation
++ code: `bad_request` (required, string) - Código de erro
++ error: `Validation Fails` (required, string) - Mensagem de erro
+
+## ToolErrorAlredyExists
++ code: `bad_request` (required, string) - Código de erro
++ error: `Tool alredy exists` (required, string) - Mensagem de erro
+
+## ToolNotFound
++ code: `not_found` (required, string) - Código de erro
++ error: `Tool not exists` (required, string) - Mensagem de erro

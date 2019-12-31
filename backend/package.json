@@ -7,6 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
+    "dev:docs": "yarn build:docs -- -s",
+    "build:docs": "aglio --theme-full-width -i docs/index.apib -t  default -o docs/index.html",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "pretest": "NODE_ENV=test sequelize db:migrate",
     "test": "NODE_ENV=test jest",
@@ -15,6 +17,8 @@
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
     "@types/jest": "^24.0.18",
+    "aglio": "^2.3.0",
+    "aglio-theme-onlicar": "^1.6.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-config-prettier": "^6.0.0",
@@ -26,7 +30,7 @@
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "sequelize-cli": "^5.5.0",
-    "sqlite3": "^4.1.0",
+    "sqlite3": "^4.1.1",
     "sucrase": "^3.10.1",
     "supertest": "^4.0.2"
   },
