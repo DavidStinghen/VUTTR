@@ -1,0 +1,16 @@
+FROM node:12.14.0-alpine
+
+# SETUP WORKDIR AND COPY FILES
+WORKDIR /app
+
+COPY package.json ./
+COPY yarn.lock ./
+
+# INSTALL PACKAGES AND COPY PROJECT FILES
+RUN yarn
+COPY . .
+
+# DEFAULT EXPOSE PORT.
+EXPOSE 3000
+
+CMD [ "yarn", "dev" ]
