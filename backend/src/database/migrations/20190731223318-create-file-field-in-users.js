@@ -10,6 +10,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.removeCollumn('users', 'file_id');
+    return queryInterface.removeColumn('users', 'file_id')
   },
 };
