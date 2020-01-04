@@ -11,6 +11,8 @@ services:
       - .:/app
     depends_on:
       - database
+    environment:
+        - DB_HOST=vuttr_postgres_database
     networks:
       - network_board
   database:
@@ -19,6 +21,8 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=no
       - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
     ports:
       - "5432:5432"
     volumes:
