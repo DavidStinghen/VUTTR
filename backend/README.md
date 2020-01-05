@@ -4,15 +4,13 @@ Project developed for Bossabox's Very Useful Tools to Remember backend challenge
 
 ## Index
 
-- [VUTTR (Very Useful Tools to Remember) :bat:](#vuttr-very-useful-tools-to-remember-bat)
-  - [Index](#index)
-  - [About VUTTR](#about-vuttr)
-  - [Pre-install](#pre-install)
-  - [Installation](#installation)
-  - [Examples of what VUTTR can do](#examples-of-what-vuttr-can-do)
-    - [Create a new user](#create-a-new-user)
-    - [Create a session](#create-a-session)
-    - [Create a new tool](#create-a-new-tool)
+- [About VUTTR](#about-vuttr)
+- [Pre-install](#pre-install)
+- [Installation](#installation)
+- [Examples of what VUTTR can do](#examples-of-what-vuttr-can-do)
+  - [Create a new user](#create-a-new-user)
+  - [Create a session](#create-a-session)
+  - [Create a new tool](#create-a-new-tool)
 
 ## About VUTTR
 
