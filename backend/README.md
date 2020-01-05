@@ -4,13 +4,15 @@ Project developed for Bossabox's Very Useful Tools to Remember backend challenge
 
 ## Index
 
-- [About VUTTR](#about-vuttr)
-- [Pre-install](#pre-install)
-- [Installation](#installation)
-- [Examples of what VUTTR can do](#examples-of-what-vuttr-can-do)
-  - [Create a new user](#create-a-new-user)
-  - [Create a session](#create-a-session)
-  - [Create a new tool](#create-a-new-tool)
+- [VUTTR (Very Useful Tools to Remember) :bat:](#vuttr-very-useful-tools-to-remember-bat)
+  - [Index](#index)
+  - [About VUTTR](#about-vuttr)
+  - [Pre-install](#pre-install)
+  - [Installation](#installation)
+  - [Examples of what VUTTR can do](#examples-of-what-vuttr-can-do)
+    - [Create a new user](#create-a-new-user)
+    - [Create a session](#create-a-session)
+    - [Create a new tool](#create-a-new-tool)
 
 ## About VUTTR
 
@@ -22,11 +24,24 @@ Before you use this application i strongly recommend you install Docker, because
 
 ## Installation
 
-- Clone this with git clone https://github.com/DavidStinghen/VUTTR.git;
-- Run yarn to install node dependencies;
+- Clone this with git clone:
+ ```
+ git clone https://github.com/DavidStinghen/VUTTR.git
+ ```
+- Run yarn to install node dependencies, if you use npm, replace the yarn command with npm install:
+  ```
+  cd VUTTR
+  yarn
+  ```
 - Configure .env file like .env.example, using your own credentials;
-- Start your Docker and run docker-compose up --build;
-- Run yarn sequelize db:migrate;
+- Start your Docker and run docker-compose up:
+  ```
+  docker-compose up
+  ```
+- Create a database and run the migrations:
+  ```
+  yarn sequelize db:migrate
+  ```
 
 ## Examples of what VUTTR can do
 
